@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="928eff50-2eb2-47b8-965d-49cef612d1ca" name="Default" comment="">
+<<<<<<< HEAD
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/__init__.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/classlist_server/__init__.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/classlist_server/frontend/__init__.py" />
@@ -15,6 +16,15 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/classlist_server/classlist_server/settings.py" afterPath="$PROJECT_DIR$/server/classlist_server/classlist_server/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/classlist_server/classlist_server/urls.py" afterPath="$PROJECT_DIR$/server/classlist_server/classlist_server/urls.py" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/classlist_server/db.sqlite3" afterPath="$PROJECT_DIR$/server/classlist_server/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/classlist_server/backend/admin.py" afterPath="$PROJECT_DIR$/server/classlist_server/backend/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/classlist_server/backend/models.py" afterPath="$PROJECT_DIR$/server/classlist_server/backend/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/classlist_server/backend/urls.py" afterPath="$PROJECT_DIR$/server/classlist_server/backend/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/classlist_server/backend/views.py" afterPath="$PROJECT_DIR$/server/classlist_server/backend/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/classlist_server/classlist_server/settings.py" afterPath="$PROJECT_DIR$/server/classlist_server/classlist_server/settings.py" />
+>>>>>>> 964f9922b877c7c80e094e694a143dd1a93a425e
     </list>
     <ignored path="BRAINCODE2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,7 +50,11 @@
         <entry file="file://$PROJECT_DIR$/server/classlist_server/frontend/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
               <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+=======
+              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+>>>>>>> 964f9922b877c7c80e094e694a143dd1a93a425e
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -48,6 +62,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/classlist_server/frontend/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -73,6 +88,79 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
+=======
+      <file leaf-file-name="recognizer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/recognition/recognizer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/classlist_server/backend/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/classlist_server/backend/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/classlist_server/classlist_server/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 964f9922b877c7c80e094e694a143dd1a93a425e
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/classlist_server/backend/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/classlist_server/classlist_server/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.928571">
+              <caret line="75" column="59" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/classlist_server/backend/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.05882353">
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -94,8 +182,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/recognizer.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/server/classlist_server/backend/frontend/views.py" />
         <option value="$PROJECT_DIR$/server/classlist_server/backend/frontend/__init__.py" />
         <option value="$PROJECT_DIR$/server/classlist_server/classlist_server/urls.py" />
@@ -106,6 +194,15 @@
         <option value="$PROJECT_DIR$/server/classlist_server/classlist_server/settings.py" />
         <option value="$PROJECT_DIR$/server/classlist_server/frontend/templates/index.html" />
         <option value="$PROJECT_DIR$/server/classlist_server/static/bootstrap-3.3.6-dist/css/bootstrap.css" />
+=======
+        <option value="$PROJECT_DIR$/recognition/recognizer.py" />
+        <option value="$PROJECT_DIR$/server/classlist_server/backend/views.py" />
+        <option value="$PROJECT_DIR$/server/classlist_server/backend/urls.py" />
+        <option value="$PROJECT_DIR$/server/classlist_server/backend/models.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/server/classlist_server/classlist_server/settings.py" />
+        <option value="$PROJECT_DIR$/server/classlist_server/backend/admin.py" />
+>>>>>>> 964f9922b877c7c80e094e694a143dd1a93a425e
       </list>
     </option>
   </component>
@@ -212,6 +309,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -271,6 +369,11 @@
               <option name="myItemId" value="bootstrap-3.3.6-dist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+=======
+              <option name="myItemId" value="classlist_server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+>>>>>>> 964f9922b877c7c80e094e694a143dd1a93a425e
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -290,6 +393,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -299,6 +403,9 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+=======
+              <option name="myItemId" value="backend" />
+>>>>>>> 964f9922b877c7c80e094e694a143dd1a93a425e
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -309,9 +416,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../venv/bin/python2.7" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+<<<<<<< HEAD
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
@@ -325,6 +433,10 @@
       <recent name="$PROJECT_DIR$/server/classlist_server" />
       <recent name="$PROJECT_DIR$/server/classlist_server/backend/frontend" />
     </key>
+=======
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+>>>>>>> 964f9922b877c7c80e094e694a143dd1a93a425e
   </component>
   <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -457,6 +569,9 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="928eff50-2eb2-47b8-965d-49cef612d1ca" name="Default" comment="" />
@@ -565,16 +680,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/classlist_server/backend/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/classlist_server/classlist_server/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/classlist_server/backend/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recognition/recognizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/server/classlist_server/backend/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -635,12 +787,21 @@
           <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/server/classlist_server/backend/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+>>>>>>> 964f9922b877c7c80e094e694a143dd1a93a425e
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/classlist_server/classlist_server/settings.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
           <folding />
@@ -651,14 +812,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.88">
           <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+=======
+        <state vertical-scroll-proportion="-6.928571">
+          <caret line="75" column="59" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="59" />
+>>>>>>> 964f9922b877c7c80e094e694a143dd1a93a425e
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/server/classlist_server/static/bootstrap-3.3.6-dist/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.95989305">
           <caret line="6166" column="1" selection-start-line="6166" selection-start-column="1" selection-end-line="6166" selection-end-column="1" />
+=======
+    <entry file="file://$PROJECT_DIR$/server/classlist_server/backend/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05882353">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+>>>>>>> 964f9922b877c7c80e094e694a143dd1a93a425e
           <folding />
         </state>
       </provider>
