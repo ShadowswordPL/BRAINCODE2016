@@ -1,5 +1,3 @@
-# Created by https://www.gitignore.io/api/swift
-
 ### Swift ###
 # Xcode
 #
@@ -11,3 +9,7 @@ DerivedData/
 
 ## Various settings
 xcuserdata
+
+# Server
+*.pyc
+venv
