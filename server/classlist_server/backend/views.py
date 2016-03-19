@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from models import Lesson, Student
 from recognition.recognizer import recognize
 from segmentation.segment import detect_faces
-
+import cv2
 @csrf_exempt
 def check(request):
     body_unicode = request.body
@@ -20,15 +20,19 @@ def check(request):
     fh.write(data.decode('base64'))
     fh.close()
 
-    _, _, _, faces_paths = detect_faces('files/' + filename)
+    _, _, _, faces_paths, crop_tuples = detect_faces('files/' + filename)
     students = Student.objects.all()
-    ids = recognize(faces_paths, students)
+    ids, matched_crop_tuples = recognize(faces_paths, crop_tuples, students)
 
     present_students = [student.name for student in students if student.pk in ids]
     absent_students = [student.name for student in students if student.pk not in ids]
     for student in students:
         print student.pk
 
+    image = cv2.imread('files/' + filename)
+    for (x, y, w, h) in matched_crop_tuples:
+        cv2.rectangle(image, (x,y), (w, h), (255, 0, 255), 7)
+    cv2.imwrite('files/' + filename, image)
     lesson = Lesson()
     lesson.name = "Mathematics"
     lesson.img = filename

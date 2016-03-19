@@ -3,25 +3,28 @@ import time
 import urllib2
 
 
-def recognize(image_paths, database):
+def recognize(image_paths, crop_tuples, database):
     """Returns a list of ids of the students that were present in image_paths.
     Args:
         image_paths: Paths to images from segmentation.
         database: A list of all possible students (Student Model).
     """
-    return recognizeMicrosoftFaceAPI(image_paths, database)
+    return recognizeMicrosoftFaceAPI(image_paths, crop_tuples,  database)
 
 
 def rate_limit_wait():
     time.sleep(61.0)
 
 
-def recognizeMicrosoftFaceAPI(image_paths, database):
+def recognizeMicrosoftFaceAPI(image_paths, crop_tuples, database):
     super_secret_key = '79f6c1631a2a41ddac1deb21783dee22'
-    result = set()
 
     success = False
     while not success:
+        mapping = dict(zip(image_paths, crop_tuples))
+        result = set()
+        matched_crop_tuples = set()
+        # i = 0
         try:
             for img in image_paths:
                 # Call DetectFace
@@ -53,14 +56,14 @@ def recognizeMicrosoftFaceAPI(image_paths, database):
                         req = urllib2.Request('https://api.projectoxford.ai/face/v1.0/verify')
                         req.add_header('Content-Type', 'application/json')
                         req.add_header('Ocp-Apim-Subscription-Key', super_secret_key)
-                        dict = {'faceId1' : face_id, 'faceId2' : id}
-                        print dict
+                        d = {'faceId1' : face_id, 'faceId2' : id}
+                        print d
                         try:
-                            response = urllib2.urlopen(req, json.dumps(dict))
+                            response = urllib2.urlopen(req, json.dumps(d))
                         except urllib2.HTTPError, e:
                             print e.read()
                             rate_limit_wait()
-                            response = urllib2.urlopen(req, json.dumps(dict))
+                            response = urllib2.urlopen(req, json.dumps(d))
 
                         resp = response.read()
                         print resp
@@ -69,11 +72,14 @@ def recognizeMicrosoftFaceAPI(image_paths, database):
                         if resp_parsed['isIdentical']:
                             print 'MATCH'
                             result.add(sid)
+                            matched_crop_tuples.add(mapping[img])
                             face_ids.remove((id, sid))
                             break
+               #  i += 1
+
             success = True
         except Exception, e:
             pass
 
-    print list(result)
-    return list(result)
+    print list(result), list(matched_crop_tuples)
+    return list(result), list(matched_crop_tuples)

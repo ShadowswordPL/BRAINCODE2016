@@ -3,7 +3,7 @@ import os
 import time
 from PIL import Image
 
-def detect_faces(imagePath, cascPath='haarcascade_frontalface_default.xml', scaleFactor=1.05):
+def detect_faces(imagePath, cascPath='haarcascade_frontalface_default.xml', scaleFactor=1.25):
     # Create the haar cascade
     faceCascade = cv2.CascadeClassifier('backend/segmentation/' + cascPath)
     print os.getcwd()
@@ -16,7 +16,7 @@ def detect_faces(imagePath, cascPath='haarcascade_frontalface_default.xml', scal
     faces = faceCascade.detectMultiScale(
         image,
         scaleFactor=scaleFactor,
-        minNeighbors= 1,
+        minNeighbors= 10,
         minSize=(45, 45),
         maxSize=(1500,1500)
     )
@@ -26,7 +26,7 @@ def detect_faces(imagePath, cascPath='haarcascade_frontalface_default.xml', scal
     i = 0
     change = 40
     faces_paths = []
-
+    crop_tuples = []
     for (x, y, w, h) in faces:
         i += 1
         im = Image.open(imagePath)
@@ -35,6 +35,7 @@ def detect_faces(imagePath, cascPath='haarcascade_frontalface_default.xml', scal
         current_time = int(time.time())
         face_image_path = 'photos/%d-%d.png' % (current_time, i)
         faces_paths.append(face_image_path)
+        crop_tuples.append(crop_tuple)
         im.save(face_image_path)
 
-    return faces, height, width, faces_paths
+    return faces, height, width, faces_paths, crop_tuples
