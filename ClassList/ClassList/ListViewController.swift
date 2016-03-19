@@ -16,7 +16,6 @@ class ListViewController: UIViewController {
     var list: [[String]] = [] {
         didSet {
             info.hidden = list.count > 1
-            indicator.stopAnimating()
             info.text = "Attendence was not checked"
             tableView.reloadData()
         }
@@ -25,7 +24,7 @@ class ListViewController: UIViewController {
     // MARK: - Table view data source
     @IBAction func photo(sender: UIBarButtonItem) {
         let picker = UIImagePickerController()
-        picker.sourceType = .Camera
+        picker.sourceType = .Camera//.PhotoLibrary
         picker.delegate = self
         presentViewController(picker, animated: true, completion: nil)
     }
@@ -34,11 +33,13 @@ class ListViewController: UIViewController {
 extension ListViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         self.dismissViewControllerAnimated(true, completion: nil)
+        list = []
         info.text = "Sending picture..."
         indicator.startAnimating()
         
-        sendPicture(image) { [weak self] in
+        sendPicture(image.rotateImageByOrientation()) { [weak self] in
             if let list = $0 {
+                self?.indicator.stopAnimating()
                 self?.list = list
             }
         }
@@ -88,5 +89,72 @@ extension ListViewController {
                 completion(list: [json["present"] as! [String], json["absent"] as! [String]])
             }
         }.resume()
+    }
+}
+
+
+// Source: http://stackoverflow.com/a/33479054/2777364
+extension UIImage {
+    func rotateImageByOrientation() -> UIImage {
+        // No-op if the orientation is already correct
+        guard self.imageOrientation != .Up else {
+            return self
+        }
+        
+        // We need to calculate the proper transformation to make the image upright.
+        // We do it in 2 steps: Rotate if Left/Right/Down, and then flip if Mirrored.
+        var transform = CGAffineTransformIdentity;
+        
+        switch (self.imageOrientation) {
+        case .Down, .DownMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.width, self.size.height)
+            transform = CGAffineTransformRotate(transform, CGFloat(M_PI))
+            
+        case .Left, .LeftMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.width, 0)
+            transform = CGAffineTransformRotate(transform, CGFloat(M_PI_2))
+            
+        case .Right, .RightMirrored:
+            transform = CGAffineTransformTranslate(transform, 0, self.size.height)
+            transform = CGAffineTransformRotate(transform, CGFloat(-M_PI_2))
+            
+        default:
+            break
+        }
+        
+        switch (self.imageOrientation) {
+        case .UpMirrored, .DownMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.width, 0)
+            transform = CGAffineTransformScale(transform, -1, 1)
+            
+        case .LeftMirrored, .RightMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.height, 0)
+            transform = CGAffineTransformScale(transform, -1, 1)
+            
+        default:
+            break
+        }
+        
+        // Now we draw the underlying CGImage into a new context, applying the transform
+        // calculated above.
+        let ctx = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height),
+            CGImageGetBitsPerComponent(self.CGImage), 0,
+            CGImageGetColorSpace(self.CGImage),
+            CGImageGetBitmapInfo(self.CGImage).rawValue)
+        CGContextConcatCTM(ctx, transform)
+        switch (self.imageOrientation) {
+        case .Left, .LeftMirrored, .Right, .RightMirrored:
+            CGContextDrawImage(ctx, CGRectMake(0,0,self.size.height,self.size.width), self.CGImage)
+            
+        default:
+            CGContextDrawImage(ctx, CGRectMake(0,0,self.size.width,self.size.height), self.CGImage)
+        }
+        
+        // And now we just create a new UIImage from the drawing context
+        if let cgImage = CGBitmapContextCreateImage(ctx) {
+            return UIImage(CGImage: cgImage)
+        } else {
+            return self
+        }
     }
 }
