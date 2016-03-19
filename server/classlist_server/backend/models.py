@@ -32,6 +32,13 @@ class Student(models.Model):
             return "This student was absent at every lesson"
         return toReturn
 
+    @property
+    def my_str(self):
+        return str(self)
+
+    def __str__(self):
+        return "<a href='/front/student/" + str(self.id) + "'>" + str(self.name) + '</a>'
+
 class Lesson(models.Model):
     name = models.CharField(max_length=200)
     img = models.ImageField(upload_to="files/")
@@ -43,6 +50,20 @@ class Lesson(models.Model):
         return len(self.students.all())
 
     @property
+    def get_present_students(self):
+        toReturn = ""
+        for student in self.students.all():
+            toReturn += str(student) + "<br>"
+        return toReturn
+
+    @property
+    def get_absent_students(self):
+        toReturn = ""
+        for student in list(Student.objects.exclude(pk__in=self.students.all())):
+            toReturn += str(student) + "<br>"
+        return toReturn
+
+    @property
     def get_absent_students_num(self):
         return len(Student.objects.all()) - len(self.students.all())
 
@@ -51,4 +72,4 @@ class Lesson(models.Model):
         return str(self)
 
     def __str__(self):
-        return "<a href='#'>" + str(self.name) + '</a>'
+        return "<a href='/front/lesson/" + str(self.id) + "'>" + str(self.name) + '</a>'

@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+{% block content %}
+
+<h3>Student: {{ student|safe }}</h3>
+<div style="text-align: center;">
+    <img src="/files/{{ student.img}}" />
+</div>
+<br>
+    <table  width="100%">
+    <tr class="big-tr">
+        <td width="50%">
+            Present on lessons:
+        </td>
+        <td width="50%">
+            Absent on lessons:
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{ student.get_present_lessons|safe }}
+        </td>
+        <td>
+            {{ student.absent |safe }}
+        </td>
+    </tr>
+</table>
+{% endblock %}
