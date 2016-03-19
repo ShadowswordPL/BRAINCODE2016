@@ -1,0 +1,72 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="{% static 'bootstrap-3.3.6-dist/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <script src="{% static 'jquery.js' %}"></script>
+    <script src="{% static 'bootstrap-3.3.6-dist/js/bootstrap.js' %}"></script>
+    <link href='https://fonts.googleapis.com/css?family=Schoolbell' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+
+<script>
+    jQuery(document).ready(function(){
+        if(location.href.indexOf("students") > 0)
+        {
+            jQuery(".students-li").addClass("active");
+        }
+        else if(location.href.indexOf("lessons") > 0)
+        {
+            jQuery(".lessons-li").addClass("active");
+        }
+        else if(location.href.indexOf("how_it") > 0)
+        {
+            jQuery(".how_it_works-li").addClass("active");
+        }
+        else
+        {
+             jQuery(".home-li").addClass("active");
+        }
+    });
+</script>
+
+<div class="navbar navbar-custom navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#"><img src="/static/img/logo.png" class="logo"/></a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="home-li"><a href="/front">Home</a></li>
+                    <li class="students-li"><a href="/front/students">Students</a></li>
+                    <li class="lessons-li"><a href="/front/lessons">Lessons</a></li>
+                    <li class="how_it_works-li"><a href="/front/how_it_works">How it works</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="container main">
+    {% block content %}{% endblock %}
+    <div class="footer">
+        <hr>
+        <p>&copy; Class list 2016.</p>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>

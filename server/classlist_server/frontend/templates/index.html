@@ -1,66 +1,24 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <link href="{% static 'bootstrap-3.3.6-dist/css/bootstrap.css' %}" rel="stylesheet">
-    <link href="{% static 'style.css' %}" rel="stylesheet">
-    <script src="{% static 'jquery.js' %}"></script>
-    <script src="{% static 'bootstrap-3.3.6-dist/js/bootstrap.js' %}"></script>
-    <link href='https://fonts.googleapis.com/css?family=Schoolbell' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  </head>
-
-  <body>
-
-    <div class="navbar navbar-custom navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#"><img src="/static/img/logo.png" class="logo"/></a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
+{% extends "main.html" %}
+{% block content %}
+    <h1>Checking the presence in a <span class="colored"">modern</span> way</h1>
+    <div class="row-fluid">
+        <div class="span4">
+            <h2 class="center"><i class="material-icons">visibility</i></h2>
+            <p><b class="colored-light">Monitor your students</b> and make sure they come to classes. There are no
+                attendance causes difficult to make up for deficiencies. Collect the information that students skip
+                classes.</p>
         </div>
-      </div>
+        <div class="span4">
+            <h2 class="center"><i class="material-icons">alarm_on</i></h2>
+            <p><b class="colored-light">Save your time</b>. Checking the list is time consuming, and also spoils the
+                form of lessons. With our application instantly check list to help you uczciom achieve better academic
+                results</p>
+        </div>
+        <div class="span4">
+            <h2 class="center"><i class="material-icons">mail_outline</i></h2>
+            <p><b class="colored-light">Notify parents about their children's absences</b>. The immediate reaction to
+                quickly catch truants, and discourage children leaving classes. As a result, they often attend classes,
+                so more will be learned</p>
+        </div>
     </div>
-
-    <div class="container main">
-      <h1>Checking the presence in a <span class="colored"">modern</span> way</h1>
-   <div class="row-fluid">
-        <div class="span4">
-          <h2 class="center"><i class="material-icons">visibility</i></h2>
-          <p><b class="colored-light">Monitor your students</b> and make sure they come to classes. There are no attendance causes difficult to make up for deficiencies. Collect the information that students skip classes.</p>
-        </div>
-        <div class="span4">
-          <h2 class="center"><i class="material-icons">alarm_on</i></h2>
-          <p><b class="colored-light">Save your time</b>. Checking the list is time consuming, and also spoils the form of lessons. With our application instantly check list to help you uczciom achieve better academic results</p>
-       </div>
-        <div class="span4">
-          <h2 class="center"><i class="material-icons">mail_outline</i></h2>
-          <p><b class="colored-light">Notify parents about their children's absences</b>. The immediate reaction to quickly catch truants, and discourage children leaving classes. As a result, they often attend classes, so more will be learned</p>
-        </div>
-      </div>
-
-
-      <div class="footer">
-      <hr>
-        <p>&copy; Class list 2016.</p>
-      </div>
-    </div> <!-- /container -->
-    </body>
-</html>
+{% endblock %}

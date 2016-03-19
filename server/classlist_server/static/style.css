@@ -39,13 +39,17 @@ a:hover {
     padding-top: 20px;
 }
 
+.active a{
+    color: #FFFF00 !important;
+}
+
 .brand{
     font-size: 34px !important;
-    padding-right: 340px !important;
+    padding-right: 160px !important;
 }
 
 .main{
-    margin-top: 130px;
+    margin-top: 150px;
 }
 
 .logo{
@@ -54,7 +58,7 @@ a:hover {
 
 h1{
     font-family: 'Ubuntu', sans-serif;
-    padding-bottom: 70px;
+    padding-bottom: 90px;
 }
 
 .footer{
