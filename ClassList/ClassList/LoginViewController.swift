@@ -12,6 +12,18 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var loginButton: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        let background = UIImageView(image: UIImage(named: "background"))
+//        navigationController?.view.addSubview(background)
+//        navigationController?.view.sendSubviewToBack(background)
+//        background.topAnchor.constraintEqualToAnchor(background.topAnchor)
+//        background.bottomAnchor.constraintEqualToAnchor(background.bottomAnchor)
+//        background.leftAnchor.constraintEqualToAnchor(background.leftAnchor)
+//        background.rightAnchor.constraintEqualToAnchor(background.rightAnchor)
+    }
     
     override func viewWillAppear(animated: Bool) {
         navigationController?.navigationBarHidden = true
@@ -27,5 +39,9 @@ class LoginViewController: UIViewController {
     }
     @IBAction func didTap(sender: UITapGestureRecognizer) {
         view.endEditing(false)
+    }
+    
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+        
     }
 }

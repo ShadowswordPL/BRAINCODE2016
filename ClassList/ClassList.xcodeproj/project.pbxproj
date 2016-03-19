@@ -14,6 +14,7 @@
 		BB120AF01C9CA95A0072387E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB120AEF1C9CA95A0072387E /* ListViewController.swift */; };
 		BB120AF21C9CC8880072387E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB120AF11C9CC8880072387E /* LoginViewController.swift */; };
 		BB120AF41C9CDE940072387E /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB120AF31C9CDE940072387E /* ClassesViewController.swift */; };
+		BB76F26C1C9D6E0100B2966B /* DevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB76F26B1C9D6E0100B2966B /* DevViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BB120AEF1C9CA95A0072387E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		BB120AF11C9CC8880072387E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB120AF31C9CDE940072387E /* ClassesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
+		BB76F26B1C9D6E0100B2966B /* DevViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				BB120AF11C9CC8880072387E /* LoginViewController.swift */,
 				BB120AF31C9CDE940072387E /* ClassesViewController.swift */,
 				BB120AEF1C9CA95A0072387E /* ListViewController.swift */,
+				BB76F26B1C9D6E0100B2966B /* DevViewController.swift */,
 				BB120AE11C9C9ADB0072387E /* Main.storyboard */,
 				BB120AE41C9C9ADB0072387E /* Assets.xcassets */,
 				BB120AE61C9C9ADB0072387E /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				BB120AF21C9CC8880072387E /* LoginViewController.swift in Sources */,
 				BB120AF41C9CDE940072387E /* ClassesViewController.swift in Sources */,
+				BB76F26C1C9D6E0100B2966B /* DevViewController.swift in Sources */,
 				BB120ADE1C9C9ADB0072387E /* AppDelegate.swift in Sources */,
 				BB120AF01C9CA95A0072387E /* ListViewController.swift in Sources */,
 			);
