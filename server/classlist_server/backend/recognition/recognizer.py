@@ -24,7 +24,6 @@ def recognizeMicrosoftFaceAPI(image_paths, crop_tuples, database):
         mapping = dict(zip(image_paths, crop_tuples))
         result = set()
         matched_crop_tuples = set()
-        # i = 0
         try:
             for img in image_paths:
                 # Call DetectFace
@@ -69,13 +68,12 @@ def recognizeMicrosoftFaceAPI(image_paths, crop_tuples, database):
                         print resp
                         resp_parsed = json.loads(resp)
 
-                        if resp_parsed['isIdentical']:
+                        if resp_parsed['isIdentical'] or resp_parsed['confidence'] >= 0.42:
                             print 'MATCH'
                             result.add(sid)
                             matched_crop_tuples.add((mapping[img], sid))
                             face_ids.remove((id, sid))
                             break
-               #  i += 1
 
             success = True
         except Exception, e:
