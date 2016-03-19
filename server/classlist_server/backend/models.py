@@ -2,9 +2,12 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+
 class Student(models.Model):
     name = models.CharField(max_length=200)
-    img = models.ImageField(upload_to="files/") # The path to images for this one
+    img = models.ImageField(upload_to="files/")
+    msFaceId = models.CharField(max_length=250) # This expires every 24 hours
+    # But it's a hackathon so we don't really give a fuck :).
 
     @property
     def get_all_lessons_num(self):
