@@ -1,4 +1,12 @@
 {% extends "main.html" %}
 {% block content %}
-    #students
+    <div class="row-fluid">
+    {% for student in students %}
+        <div class="span4 center students-cell">
+            <p><img class="student-photo" src="/files/{{ student.img }}"></p>
+            <p class="students-name">{{ student.name }}</p>
+            <p>{{ student.get_present_lessons_num }} / {{ student.get_all_lessons_num }}</p>
+        </div>
+    {% endfor %}
+    </div>
 {% endblock %}

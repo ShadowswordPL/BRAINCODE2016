@@ -28,6 +28,21 @@ a:hover {
     padding-top: 20px;
 }
 
+.navbar-fixed-top { position: absolute!important; }
+
+.student-photo{
+    height: 200px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.students-name{
+    font-size: 20px;
+}
+
+.students-cell{
+    padding-bottom: 70px;
+}
+
 .navbar, .navbar-inner, .navbar  a {
     background-color: transparent !important;
     background: transparent !important;

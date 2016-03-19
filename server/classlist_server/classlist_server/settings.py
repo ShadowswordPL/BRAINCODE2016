@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'backend'
+    'backend',
+    'frontend'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -123,4 +124,5 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static/"),)
 CSRF_COOKIE_SECURE = False
-
+MEDIA_ROOT = os.path.join(BASE_DIR, "files/")
+MEDIA_URL = "/files/"
