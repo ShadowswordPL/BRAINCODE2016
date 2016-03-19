@@ -1,4 +1,29 @@
 {% extends "main.html" %}
 {% block content %}
-#lessons
+<table width="100%">
+    <tr class="big-tr">
+        <td width="25%">Name</td>
+        <td width="25%">Present students</td>
+        <td width="25%">Absent students</td>
+        <td width="25%">Date</td>
+    </tr>
+{% for lesson in lessons %}
+    <tr>
+        <td>
+            {{ lesson.my_str|safe }}
+        </td>
+        <td>
+            {{ lesson.get_present_students_num}}
+        </td>
+        <td>
+            {{ lesson.get_absent_students_num }}
+        </td>
+        <td>
+            {{ lesson.dateTime }}
+        </td>
+    </tr>
+
+{% endfor %}
+
+</table>
 {% endblock %}

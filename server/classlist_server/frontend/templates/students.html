@@ -5,8 +5,14 @@
         <div class="span4 center students-cell">
             <p><img class="student-photo" src="/files/{{ student.img }}"></p>
             <p class="students-name">{{ student.name }}</p>
-            <p>{{ student.get_present_lessons_num }} / {{ student.get_all_lessons_num }}</p>
+            <p class="student-overall">Overall: {{ student.get_present_lessons_num }} / {{ student.get_all_lessons_num }}</p>
+            <button type="button" data-html="true" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="left" title="Absent list" data-content="{{ student.get_absent_lessons|safe }}">Absent</button>&nbsp;
+            <button type="button" data-html="true" class="btn btn-lg btn-success" data-toggle="popover" data-placement="right" title="Present list" data-content="{{ student.get_present_lessons|safe}}">Present</button>
         </div>
     {% endfor %}
     </div>
+    <script>
+        jQuery("[data-toggle=popover]").popover();
+    </script>
+
 {% endblock %}
