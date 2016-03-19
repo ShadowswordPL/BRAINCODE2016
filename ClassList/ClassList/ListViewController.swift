@@ -12,12 +12,19 @@ class ListViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var info: UILabel!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    var dataTask: NSURLSessionDataTask?
     
     var list: [[String]] = [] {
         didSet {
             info.hidden = list.count > 1
             info.text = "Attendence was not checked"
             tableView.reloadData()
+        }
+    }
+    
+    override func didMoveToParentViewController(parent: UIViewController?) {
+        if parent == nil {
+            dataTask?.cancel()
         }
     }
 
@@ -74,24 +81,38 @@ extension ListViewController: UITableViewDataSource {
 
 extension ListViewController {
     func sendPicture(picture: UIImage, completion: (list:[[String]]?) -> ()) {
-        let url = NSURL(string: "http://10.3.8.65/api/")!
+        guard let url = NSURL(string: "http://\(DevViewController.address)/api/"), data = UIImageJPEGRepresentation(picture, 1) else {
+            info.text = "error"
+            return
+        }
+        
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = "POST"
-        let data = UIImageJPEGRepresentation(picture, 1)!
         let base64 = data.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.EncodingEndLineWithLineFeed)
         let json = ["photo": base64]
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(json, options: NSJSONWritingOptions.PrettyPrinted)
-        NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
-            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0)) as! [String: AnyObject]
-            dispatch_async(dispatch_get_main_queue()) {
-                completion(list: [json["present"] as! [String], json["absent"] as! [String]])
+        dataTask = NSURLSession.sharedSession().dataTaskWithRequest(request) { [weak self] data, response, error in
+            if let _ = error {
+                self?.info.text = "error"
             }
-        }.resume()
+            
+            guard let json = try? NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0)),
+                let array = json as? [String: AnyObject],
+                let present = array["present"] as? [String],
+                let absent = array["absent"] as? [String] else {
+                self?.info.text = "error"
+                return
+            }
+            dispatch_async(dispatch_get_main_queue()) {
+                completion(list: [present, absent])
+            }
+        }
+        
+        dataTask?.resume()
     }
 }
-
 
 // Source: http://stackoverflow.com/a/33479054/2777364
 extension UIImage {
