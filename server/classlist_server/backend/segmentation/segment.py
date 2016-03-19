@@ -26,6 +26,7 @@ def detect_faces(imagePath, cascPath='haarcascade_frontalface_default.xml', scal
 
     i = 0
     change = 20
+    faces_paths = []
 
     for (x, y, w, h) in faces:
         i += 1
@@ -33,7 +34,8 @@ def detect_faces(imagePath, cascPath='haarcascade_frontalface_default.xml', scal
         crop_tuple = (max(x - change, 0), max(y - change, 0), min(x + w + change, width), min(y + h + change, height))
         im = im.crop(crop_tuple)
         current_time = int(time.time())
-        faceImagePath = 'photos/%d-%d.png' % (current_time, i)
-        im.save(faceImagePath)
+        face_image_path = 'photos/%d-%d.png' % (current_time, i)
+        faces_paths.append(face_image_path)
+        im.save(face_image_path)
 
-    return faces, height, width
+    return faces, height, width, faces_paths
