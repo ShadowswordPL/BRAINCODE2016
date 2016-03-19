@@ -8,10 +8,10 @@ def index(request):
 
 def student(request, student_id):
     context = {}
-    if(Lesson.objects.filter(id=student_id).count() > 0):
+    if(Student.objects.filter(id=student_id).count() > 0):
         context["student"] = Student.objects.filter(id=student_id).first()
     else:
-        context["student"] = ""
+        context["student"] = None
     return HttpResponse(render(request, 'student.html', context))
 
 def students(request):
@@ -25,7 +25,7 @@ def lesson(request, lesson_id):
     if(Lesson.objects.filter(id=lesson_id).count() > 0):
         context["lesson"] = Lesson.objects.filter(id=lesson_id).first()
     else:
-        context["lesson"] = ""
+        context["lesson"] = None
     return HttpResponse(render(request, 'lesson.html', context))
 
 def lessons(request):

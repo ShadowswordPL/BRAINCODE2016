@@ -1,6 +1,7 @@
 {% extends "main.html" %}
 {% block content %}
 
+{% if student %}
 <h3>Student: {{ student|safe }}</h3>
 <div style="text-align: center;">
     <img src="/files/{{ student.img}}" />
@@ -20,8 +21,11 @@
             {{ student.get_present_lessons|safe }}
         </td>
         <td>
-            {{ student.absent |safe }}
+            {{ student.get_absent_lessons |safe }}
         </td>
     </tr>
 </table>
+{% else %}
+<h3>Student not found</h3>
+{% endif %}
 {% endblock %}

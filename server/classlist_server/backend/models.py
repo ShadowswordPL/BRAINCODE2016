@@ -42,7 +42,7 @@ class Student(models.Model):
 class Lesson(models.Model):
     name = models.CharField(max_length=200)
     img = models.ImageField(upload_to="files/")
-    students = models.ManyToManyField(Student)
+    students = models.ManyToManyField(Student, blank=True)
     dateTime = models.DateTimeField(auto_now_add=True)
 
     @property
