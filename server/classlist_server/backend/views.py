@@ -26,15 +26,19 @@ def check(request):
 
     present_students = [student.name for student in students if student.pk in ids]
     absent_students = [student.name for student in students if student.pk not in ids]
-    for student in students:
-        print student.pk
 
     image = cv2.imread('files/' + filename)
     for ((xb, yb, xe, ye), _) in matched_crop_tuples:
-        cv2.rectangle(image, (xb,yb), (xe, ye), (255, 0, 255), 7)
+        cv2.rectangle(image, (xb,yb), (xe, ye), (213, 72, 211), 7)
 
-    for ((xb, yb, _, _), sid) in matched_crop_tuples:
-        cv2.putText(image, next(stud.name for stud in students if stud.pk == sid), (xb, yb), cv2.FONT_HERSHEY_SIMPLEX, 2, 3400, 5)
+    for ((xb, yb, xe, _), sid) in matched_crop_tuples:
+        xc = (xb + xe) / 2
+        text = next(stud.name for stud in students if stud.pk == sid)
+        fontSize = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, fontScale=2, thickness=5)
+        print fontSize
+        print xc
+        offset = fontSize[0][0] / 2
+        cv2.putText(image, text, (max(0, xc - offset), yb), cv2.FONT_HERSHEY_DUPLEX, 2, (171, 15, 169), 5)
 
     cv2.imwrite('files/' + filename, image)
     lesson = Lesson()
