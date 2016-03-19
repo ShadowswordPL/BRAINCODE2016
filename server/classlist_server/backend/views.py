@@ -8,8 +8,10 @@ from models import Lesson, Student
 from recognition.recognizer import recognize
 from segmentation.segment import detect_faces
 import cv2
+
 @csrf_exempt
 def check(request):
+    print "Request started. Segmenting..."
     body_unicode = request.body
     body = json.loads(body_unicode)
     data = body['photo']
