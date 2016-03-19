@@ -30,8 +30,12 @@ def check(request):
         print student.pk
 
     image = cv2.imread('files/' + filename)
-    for (x, y, w, h) in matched_crop_tuples:
-        cv2.rectangle(image, (x,y), (w, h), (255, 0, 255), 7)
+    for ((xb, yb, xe, ye), _) in matched_crop_tuples:
+        cv2.rectangle(image, (xb,yb), (xe, ye), (255, 0, 255), 7)
+
+    for ((xb, yb, _, _), sid) in matched_crop_tuples:
+        cv2.putText(image, next(stud.name for stud in students if stud.pk == sid), (xb, yb), cv2.FONT_HERSHEY_SIMPLEX, 2, 3400, 5)
+
     cv2.imwrite('files/' + filename, image)
     lesson = Lesson()
     lesson.name = "Mathematics"

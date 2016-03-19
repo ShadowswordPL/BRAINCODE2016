@@ -72,7 +72,7 @@ def recognizeMicrosoftFaceAPI(image_paths, crop_tuples, database):
                         if resp_parsed['isIdentical']:
                             print 'MATCH'
                             result.add(sid)
-                            matched_crop_tuples.add(mapping[img])
+                            matched_crop_tuples.add((mapping[img], sid))
                             face_ids.remove((id, sid))
                             break
                #  i += 1
