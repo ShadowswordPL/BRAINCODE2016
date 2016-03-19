@@ -23,7 +23,8 @@ def check(request):
     _, _, _, faces_paths = detect_faces(filename)
     students = Student.objects.all()
     ids = recognize(faces_paths, students)
-    present_students = [students[id].name for id in ids]
+
+    present_students = [student.name for student in students if student.pk in ids]
     absent_students = [student.name for student in students if student.pk not in ids]
     for student in students:
         print student.pk
