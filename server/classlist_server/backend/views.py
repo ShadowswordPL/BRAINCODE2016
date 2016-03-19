@@ -4,7 +4,7 @@ import time
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from models import Student
+from models import Lesson, Student
 from recognition.recognizer import recognize
 from segmentation.segment import detect_faces
 
@@ -15,12 +15,12 @@ def check(request):
     data = body['photo']
 
     currtime = int(time.time())
-    filename = 'tempimages/' + str(currtime) + '.png'
-    fh = open(filename, 'wb')
+    filename = 'files/' + str(currtime) + '.png'
+    fh = open('files/' + filename, 'wb')
     fh.write(data.decode('base64'))
     fh.close()
 
-    _, _, _, faces_paths = detect_faces(filename)
+    _, _, _, faces_paths = detect_faces('files/' + filename)
     students = Student.objects.all()
     ids = recognize(faces_paths, students)
 
@@ -28,5 +28,14 @@ def check(request):
     absent_students = [student.name for student in students if student.pk not in ids]
     for student in students:
         print student.pk
+
+    lesson = Lesson()
+    lesson.name = "Mathematics"
+    lesson.img = filename
+    lesson.save()
+    for student in students:
+        if student.pk in ids:
+            lesson.students.add(student)
+    lesson.save()
 
     return JsonResponse({'present': present_students, 'absent': absent_students})

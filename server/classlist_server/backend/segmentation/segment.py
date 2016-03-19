@@ -3,12 +3,11 @@ import os
 import time
 from PIL import Image
 
-def detect_faces(imagePath, cascPath='haarcascade_frontalface_default.xml', scaleFactor=1.3):
+def detect_faces(imagePath, cascPath='haarcascade_frontalface_default.xml', scaleFactor=1.05):
     # Create the haar cascade
     faceCascade = cv2.CascadeClassifier('backend/segmentation/' + cascPath)
     print os.getcwd()
     print '/home/tommalla/Programowanie/Python/BrainCode/BRAINCODE2016/server/classlist_server/backend/segmentation/' + cascPath
-    print faceCascade.empty()
 
     # Read the image
     image = cv2.imread(imagePath)
@@ -17,9 +16,9 @@ def detect_faces(imagePath, cascPath='haarcascade_frontalface_default.xml', scal
     faces = faceCascade.detectMultiScale(
         image,
         scaleFactor=scaleFactor,
-        minNeighbors=15,
+        minNeighbors= 1,
         minSize=(45, 45),
-        maxSize=(500,500)
+        maxSize=(1500,1500)
     )
 
     print "Found {0} faces".format(len(faces))
