@@ -4,25 +4,52 @@ body {
     color: #FFF;
 }
 
+a {
+    color: #FFF !important;
+}
+
+a:hover {
+    color: #FFFF00 !important;
+}
+
+.colored{
+    color: #FFFF00 !important;
+}
+
+.colored-light{
+    color: #fffca9 !important;
+}
+
+.navbar {
+    color: #FFF !important;
+}
+
+.nav{
+    padding-top: 20px;
+}
+
 .navbar, .navbar-inner, .navbar  a {
     background-color: transparent !important;
     background: transparent !important;
     border-width: 0px !important;
     box-shadow: none !important;
     text-shadow: none !important;
-    font-family: 'Schoolbell', cursive;
-    color: #FFF !important;
+    font-family: 'Ubuntu', sans-serif;;
     font-size: 24px;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .brand{
-    font-size: 40px !important;
-    padding-right: 60px !important;
+    font-size: 34px !important;
+    padding-right: 340px !important;
 }
 
 .main{
     margin-top: 130px;
+}
+
+.logo{
+    width: 220px;
 }
 
 h1{
